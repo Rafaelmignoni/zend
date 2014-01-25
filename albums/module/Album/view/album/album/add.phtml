@@ -1,0 +1,19 @@
+<?php
+
+$title = 'Adiciona novo Album';
+$this->headTitle($title);
+
+?>
+
+<h1><?= $this->escapeHtml($title); ?></h1>
+
+<?php 
+
+$form->setAttribute('action', $this->url('album', array('action' => 'add')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($this->form);
+echo $this->form()->closeTag();
+
+?>
